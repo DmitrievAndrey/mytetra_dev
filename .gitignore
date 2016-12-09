@@ -4,6 +4,8 @@
 /misc
 /qtc-gdbmacros
 /build-mytetra-Desktop_Qt_5_7_0_MSVC2015_64bit-Profile
+/build-mytetra-Desktop_Qt_5_7_0_MSVC2015_64bit-Release
+/build-mytetra-Desktop_Qt_5_7_0_MSVC2015_64bit-Debug
 Makefile
 qdevelop-settings.db
 qrc_mytetra.cpp

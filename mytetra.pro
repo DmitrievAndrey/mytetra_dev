@@ -389,3 +389,10 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 OTHER_FILES += \
     android/AndroidManifest.xml
+
+# win icon
+win32:RC_FILE = desktop/win.rc
+
+DISTFILES += \
+    desktop/mytetra.ico \
+    desktop/win.rc
