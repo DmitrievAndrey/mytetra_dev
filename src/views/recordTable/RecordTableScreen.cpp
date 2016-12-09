@@ -185,10 +185,11 @@ void RecordTableScreen::setupUI(void)
 {
  toolsLine=new QToolBar(this);
 
- /*
- QSize toolBarIconSize(16,16);
+
+//comment removed .AD.07-DEZ-2016
+ QSize toolBarIconSize(mytetraConfig.getToolbarIconSize(),mytetraConfig.getToolbarIconSize());
  toolsLine->setIconSize(toolBarIconSize);
- */
+
 
  if(mytetraConfig.getInterfaceMode()=="mobile")
  {

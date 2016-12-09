@@ -869,6 +869,17 @@ void AppConfig::setPreviewIconSize(int n)
  conf->setValue("previewIconSize", n);
 }
 
+int AppConfig::getToolbarIconSize(void)
+{
+ return conf->value("toolbarIconSize",24).toInt();
+}
+
+
+void AppConfig::setToolbarIconSize(int n)
+{
+ conf->setValue("toolbarIconSize", n);
+}
+
 
 QString AppConfig::getIconCurrentSectionName(void)
 {

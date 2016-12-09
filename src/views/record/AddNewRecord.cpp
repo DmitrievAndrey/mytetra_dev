@@ -177,7 +177,8 @@ QString AddNewRecord::getField(QString name)
   if(name=="name" ||
      name=="author" ||
      name=="url" ||
-     name=="tags")
+     name=="tags" ||
+          name=="category")
     return infoField.getField(name);
 
   if(name=="text")

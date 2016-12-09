@@ -44,6 +44,11 @@ void InfoFieldEnter::setup_ui(void)
  recordTagsLabel->setText(tr("Tags"));
  recordTags=new QLineEdit(this);
 
+ // Элементы для запроса категории
+ recordCategoryLabel=new QLabel(this);
+ recordCategoryLabel->setText(tr("Category"));
+ recordCategory=new QLineEdit(this);
+
  // Кнопка раскрытия или закрытия полей author, url, tags...
  // Она в два раза меньше обычного размера
  expandInfo=new QToolButton(this);
@@ -98,6 +103,10 @@ void InfoFieldEnter::assembly(void)
 
  infoFieldLayout->addWidget(recordTagsLabel,++y,0);
  infoFieldLayout->addWidget(recordTags,y,1);
+
+ //Category .AD.06-DEZ-2016
+ infoFieldLayout->addWidget(recordCategoryLabel,++y,0);
+ infoFieldLayout->addWidget(recordCategory,y,1);
 
  // Устанавливается видимость или невидимость полей author, url, tags...
  expandInfoOnDisplay( mytetraConfig.get_addnewrecord_expand_info() );
@@ -170,7 +179,8 @@ bool InfoFieldEnter::checkFieldName(QString name)
  if(name=="name" ||
     name=="author" ||
     name=="url" ||
-    name=="tags")
+    name=="tags" ||
+     name=="category")
   return true;
  else
   return false;
@@ -185,6 +195,7 @@ QString InfoFieldEnter::getField(QString name)
    if(name=="author")return  recordAuthor->text();
    if(name=="url")   return  recordUrl->text();
    if(name=="tags")  return  recordTags->text();
+   if(name=="category")  return  recordCategory->text(); //.AD.
   }
  else
   criticalError("Can not get field "+name+" in InfoFieldEnter method get_field");
@@ -201,6 +212,7 @@ void InfoFieldEnter::setField(QString name,QString value)
    if(name=="author")recordAuthor->setText(value);
    if(name=="url")   recordUrl->setText(value);
    if(name=="tags")  recordTags->setText(value);
+   if(name=="category")  recordCategory->setText(value); //.AD.
   }
  else
   criticalError("Can not set field "+name+" in InfoFieldEnter method set_field");

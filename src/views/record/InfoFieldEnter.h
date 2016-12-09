@@ -52,6 +52,12 @@ private:
   QLabel    *recordTagsLabel;
   QLineEdit *recordTags;
 
+  // Ввод Категории .AD.06-DEZ-2016
+  QLabel    *recordCategoryLabel;
+  QLineEdit *recordCategory;
+
+
+
   // Кнопка, раскрывающая и скрывающая поля author, url, tags
   QToolButton *expandInfo;
 

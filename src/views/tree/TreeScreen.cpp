@@ -172,10 +172,11 @@ void TreeScreen::setupUI(void)
 {
  toolsLine=new QToolBar(this);
 
- /*
- QSize tool_bar_icon_size(16,16);
+ //comment removed .AD.07-DEZ-2016
+ QSize tool_bar_icon_size(mytetraConfig.getToolbarIconSize(),mytetraConfig.getToolbarIconSize());
+
  toolsLine->setIconSize(tool_bar_icon_size);
- */
+
 
  insertActionAsButton(toolsLine, actionList["insSubbranch"]);
  insertActionAsButton(toolsLine, actionList["insBranch"]);
