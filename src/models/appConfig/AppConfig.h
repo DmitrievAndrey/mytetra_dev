@@ -234,6 +234,10 @@ public:
     int  getPreviewIconSize(void);
     void setPreviewIconSize(int n);
 
+    // Размер иконок в toolbar
+    void setToolbarIconSize(int n);
+    int getToolbarIconSize(void);
+
     // Последняя выбранная секция в окошке выбора иконок
     QString getIconCurrentSectionName(void);
     void setIconCurrentSectionName(QString name);

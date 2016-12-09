@@ -154,9 +154,11 @@ void MetaEditor::metaAssembly(void)
   editorMainLayer->addWidget(labelTags,            7,0);
   editorMainLayer->addWidget(recordTagsScrollArea, 7,1); // Было addLayout(recordTagsLayout ...)
 
+  //editorMainLayer->addWidget(labelCategory,            8,0);
+
   editorMainLayer->setColumnStretch(1,1);
 
-  editorMainLayer->setContentsMargins(0,0,0,0);
+  //editorMainLayer->setContentsMargins(0,0,0,0);
 
   editorMainScreen->setLayout(editorMainLayer);
 

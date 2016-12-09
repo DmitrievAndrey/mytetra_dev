@@ -141,7 +141,9 @@ void MainWindow::setupSignals(void)
 
 void MainWindow::assembly(void)
 {
-  vSplitter=new QSplitter(Qt::Vertical);
+    //Show Notes on the right.
+  vSplitter=new QSplitter(Qt::Horizontal);
+  //vSplitter=new QSplitter(Qt::Vertical);
   vSplitter->addWidget(recordTableScreen); // Список конечных записей
   vSplitter->addWidget(editorScreen);      // Текст записи
   vSplitter->setCollapsible(0,false); // Список конечных записей не может смыкаться

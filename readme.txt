@@ -1,4 +1,5 @@
-﻿MyTetra v.1.x 
+
+MyTetra v.1.x 
 
 MyTetra - smart manager for information collecting.
 

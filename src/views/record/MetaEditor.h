@@ -37,6 +37,7 @@ public:
  void setAuthor  (QString author);
  void setUrl     (QString url);
  void setTags    (QString tags);
+ void setCategory (QString category); //.AD.06.12.2006
 
  static void toAttachCallback(void);
 
@@ -60,6 +61,11 @@ private:
  QLabel *recordUrl;
 
  QLabel *labelTags; // Надпись "Tags"
+
+ //QLabel *labelCategory; // Надпись "Category"
+ //QLabel *recordCategory;
+
+
  QWidget *recordTagsContainer;
  QHBoxLayout *recordTagsLayout;
  QScrollArea *recordTagsScrollArea;

@@ -171,6 +171,7 @@ void RecordTableController::initMetaEditorAtClickToRecord(const int pos)
   edView->setAuthor( table->getField("author", pos) );
   edView->setUrl   ( table->getField("url", pos) );
   edView->setTags  ( table->getField("tags", pos) );
+  edView->setTags  ( table->getField("category", pos) ); //.AD.
 
   QString id=table->getField("id", pos);
   edView->setMiscField("id", id);
@@ -565,6 +566,7 @@ void RecordTableController::addNewRecord(int mode)
   record.setField("author", addNewRecordWin.getField("author"));
   record.setField("url",    addNewRecordWin.getField("url"));
   record.setField("tags",   addNewRecordWin.getField("tags"));
+  record.setField("category",   addNewRecordWin.getField("category"));
   record.setPictureFiles( DiskHelper::getFilesFromDirectory(directory, "*.png") );
 
   // Пока что принята концепция, что файлы нельзя приаттачить в момент создания записи
@@ -679,6 +681,7 @@ void RecordTableController::editFieldContext(QModelIndex proxyIndex)
   editRecordWin.setField("author",table->getField("author", pos) );
   editRecordWin.setField("url",   table->getField("url",    pos) );
   editRecordWin.setField("tags",  table->getField("tags",   pos) );
+  editRecordWin.setField("category",  table->getField("category",   pos) ); //.AD.
 
   // Если запись заблокирована
   if(table->getField("block",   pos)=="1")
@@ -693,7 +696,9 @@ void RecordTableController::editFieldContext(QModelIndex proxyIndex)
             editRecordWin.getField("name"),
             editRecordWin.getField("author"),
             editRecordWin.getField("url"),
-            editRecordWin.getField("tags"));
+            editRecordWin.getField("tags"),
+            editRecordWin.getField("category") //.AD.
+            );
 }
 
 
@@ -702,7 +707,8 @@ void RecordTableController::editField(int pos,
                                       QString name,
                                       QString author,
                                       QString url,
-                                      QString tags)
+                                      QString tags,
+                                      QString category) //.AD:
 {
   qDebug() << "In edit_field()";
 
@@ -715,6 +721,8 @@ void RecordTableController::editField(int pos,
   editData["author"]=author;
   editData["url"]=url;
   editData["tags"]=tags;
+  editData["category"]=category; //.AD.
+
 
   // Обновление новых данных в таблице конечных записей
   table->editRecordFields(pos, editData);
@@ -725,6 +733,8 @@ void RecordTableController::editField(int pos,
   metaEditor->setAuthor(author);
   metaEditor->setUrl(url);
   metaEditor->setTags(tags);
+  metaEditor->setTags(category); //.AD.
+
 
   // Сохранение дерева веток
   find_object<TreeScreen>("treeScreen")->saveKnowTree();

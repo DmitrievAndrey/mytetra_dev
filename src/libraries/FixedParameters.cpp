@@ -15,6 +15,7 @@ FixedParameters::FixedParameters(QObject *parent) : QObject(parent)
                                           << "author" \
                                           << "url" \
                                           << "tags" \
+                                          << "category" \
                                           << "ctime" \
                                           << "dir" \
                                           << "file" \
@@ -29,6 +30,7 @@ FixedParameters::FixedParameters(QObject *parent) : QObject(parent)
                                                  << "author" \
                                                  << "url" \
                                                  << "tags" \
+                                                 << "category" \
                                                  << "ctime" \
                                                  << "dir" \
                                                  << "file" \
@@ -41,7 +43,8 @@ FixedParameters::FixedParameters(QObject *parent) : QObject(parent)
   recordFieldCryptedList=(QStringList() << "name" \
                                         << "author" \
                                         << "url" \
-                                        << "tags");
+                                        << "tags" \
+                                        << "category");
 
   // Для веток
   itemFieldAvailableList=(QStringList() << "id" \
@@ -102,6 +105,7 @@ QMap<QString, QString> FixedParameters::recordFieldDescription(QStringList list)
   names["author"]=tr("Author");
   names["url"]=tr("Url");
   names["tags"]=tr("Tags");
+  names["category"]=tr("Category"); //.AD.
   names["ctime"]=tr("Create time");
   names["dir"]=tr("Directory name");
   names["file"]=tr("File name");

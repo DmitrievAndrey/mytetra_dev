@@ -117,7 +117,8 @@ protected:
                  QString name,
                  QString author,
                  QString url,
-                 QString tags);
+                 QString tags,
+                 QString category);
 
 };
 
