@@ -214,6 +214,7 @@ void RecordTableScreen::setupUI(void)
 
 
  extraToolsLine=new QToolBar(this);
+ extraToolsLine->setIconSize(toolBarIconSize); //here as well
 
  if(mytetraConfig.getInterfaceMode()=="desktop")
  {
