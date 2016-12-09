@@ -171,7 +171,7 @@ char* fromQStringToChar( const QString& str )
 
 
 // Рекурсивная печать дерева объектов, т.к. dumpObjectInfo() и dumpObjectTree() не работают
-void print_object_tree_recurse(QObject *pobj)
+void printObjectTreeRecurse(QObject *pobj)
 {
   static int indent=0;
 
@@ -188,12 +188,15 @@ void print_object_tree_recurse(QObject *pobj)
     for(int j=0;j<indent;j++)indentline=indentline+".";
 
     if((currobj->objectName()).length()==0)
-      qDebug("%s%s",fromQStringToChar(indentline), currobj->metaObject()->className() );
+      qDebug("%s%s", indentline.toLocal8Bit().data(),
+                     currobj->metaObject()->className() );
     else
-      qDebug("%s%s, NAME %s",fromQStringToChar(indentline), currobj->metaObject()->className(), fromQStringToChar(currobj->objectName()) );
+      qDebug("%s%s, NAME %s", indentline.toLocal8Bit().data(),
+                              currobj->metaObject()->className(),
+                              (currobj->objectName()).toLocal8Bit().data() );
 
     indent++;
-    print_object_tree_recurse(currobj);
+    printObjectTreeRecurse(currobj);
     indent--;
   }
 }
@@ -204,7 +207,7 @@ void printObjectTree(void)
 {
   qDebug() << "Object tree";
 
-  print_object_tree_recurse(pMainWindow);
+  printObjectTreeRecurse(pMainWindow);
 }
 
 
