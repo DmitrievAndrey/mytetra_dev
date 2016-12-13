@@ -227,7 +227,10 @@ void RecordTableScreen::setupUI(void)
  treePathLabel=new QLabel(this);
  treePathLabel->setWordWrap(true);
  if(mytetraConfig.getInterfaceMode()=="desktop")
-   treePathLabel->hide();
+     treePathLabel->hide();
+
+ recordTableController->getView()->setFont(QFont("GE Inspira", 12));
+ recordTableController->getView()->setIconSize(QSize(24,24));
 }
 
 

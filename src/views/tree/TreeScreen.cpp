@@ -225,6 +225,12 @@ void TreeScreen::setupUI(void)
 
  // Представление не должно позволять редактировать элементы обычным путем
  knowTreeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+ //Установим размер шрифта для дерева - глазки у меня так себе
+ knowTreeView->setFont(QFont("GE Inspira", 12));
+
+ QSize tree_icon_size(24,24);
+ knowTreeView->setIconSize(tree_icon_size);
 }
 
 
